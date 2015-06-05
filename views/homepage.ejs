@@ -11,8 +11,8 @@
 	<meta content="" name="author" />
 	<!-- BEGIN GLOBAL MANDATORY STYLES -->
 	<!--STYLES-->
+	<link rel="stylesheet" href="/styles/angular-toastr.min.css">
 	<link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="/styles/bootstrap.css">
 	<link rel="stylesheet" href="/styles/bootstrap.min.css">
 	<link rel="stylesheet" href="/styles/importer.css">
 	<link rel="stylesheet" href="/styles/pages/login-soft.css">
@@ -43,7 +43,7 @@
 	<!-- BEGIN LOGIN -->
 	<div class="content">
 		<!-- BEGIN LOGIN FORM -->
-		<form class="form-vertical login-form" name="loginForm" *ng-submit="submitLoginForm()" novalidate>
+		<form class="form-vertical login-form" ng-submit="submitLoginForm()" novalidate>
 			<h3 class="form-title">Login to your account</h3>
 			<div class="alert alert-error hide">
 				<button class="close" data-dismiss="alert"></button>
@@ -55,7 +55,7 @@
 				<div class="controls">
 					<div class="input-icon left">
 						<i class="icon-user"></i>
-						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="on" placeholder="Username" name="username" ng-required="true"/>
+						<input class="m-wrap placeholder-no-fix" type="text" autocomplete="on" placeholder="Username" name="username" ng-required="true" ng-model="loginForm.username"/>
 					</div>
 				</div>
 			</div>
@@ -64,7 +64,7 @@
 				<div class="controls">
 					<div class="input-icon left">
 						<i class="icon-lock"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" ng-required="true"/>
+						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" ng-required="true" ng-model="loginForm.password"/>
 					</div>
 				</div>
 			</div>
@@ -72,7 +72,7 @@
 				<label class="checkbox">
 				<input type="checkbox" name="remember" value="1"/> Remember me
 				</label>
-				<button type="submit" class="btn blue pull-right" ng-disabled="myForm.$invalid">
+				<button type="submit" class="btn btn-primary btn-lg btn-bloc pull-right" ng-disabled="loginForm.$invalid">
 				Login <i class="m-icon-swapright m-icon-white"></i>
 				</button>            
 			</div>
@@ -114,7 +114,7 @@
 		</form>
 		<!-- END FORGOT PASSWORD FORM -->
 		<!-- BEGIN REGISTRATION FORM -->
-		<form class="form-vertical register-form" name="signupForm" method="post" ng-submit="submitSignupForm()">
+		<form class="form-vertical register-form" method="post" ng-submit="submitSignupForm()" novalidate>
 			<h3 >Sign Up</h3>
 			<p>Enter your personal details below:</p>
 			<div class="control-group">
@@ -173,7 +173,7 @@
 				</div>
 			</div>
 			<div class="form-actions">
-			  <button class="btn btn-primary btn-lg btn-block" type="submit" ng-disabled="signup.$invalid">
+			  <button class="btn btn-primary btn-lg btn-block" type="submit" ng-disabled="signupForm.$invalid">
 				<span ng-show="!signupForm.loading">Create Account</span>
 				<span class="overlord-loading-spinner fa fa-spinner" ng-show="signupForm.loading" ></span>
 				<span ng-show="signupForm.loading">Preparing your new account...</span>
@@ -190,12 +190,20 @@
 
 	<!--SCRIPTS-->
 	<script src="/js/dependencies/sails.io.js"></script>
+	<script src="/js/dependencies/angular.min.js"></script>
 	<script src="/js/dependencies/jquery-1.10.1.min.js"></script>
 	<script src="/js/dependencies/bootstrap.min.js"></script>
-	<script src="/js/dependencies/bootstrap.js"></script>
+	<script src="/js/dependencies/public/homepage/authModule.js"></script>
+	<script src="/js/dependencies/private/dashboard/dashboardModule.js"></script>
+	<script src="/js/dependencies/angular-toastr.min.js"></script>
+	<script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
 	<script src="/js/dependencies/jquery-migrate-1.2.1.min.js"></script>
+	<script src="/js/dependencies/jquery.backstretch.min.js"></script>
+	<script src="/js/dependencies/private/dashboard/dashboardController.js"></script>
+	<script src="/js/dependencies/public/homepage/AuthController.js"></script>
 	<script src="/js/dependencies/scripts/app.js"></script>
 	<script src="/js/dependencies/scripts/login-soft.js"></script>
+	<script src="/js/dependencies/select2.full.min.js"></script>
 	<!--SCRIPTS END-->
 	<script>
 		jQuery(document).ready(function() {     

@@ -1,1 +1,1 @@
-var authApp = angular.module("AuthApp",[]);
+var authApp = angular.module("AuthApp",['toastr']);

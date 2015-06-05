@@ -35,6 +35,7 @@ var jsFilesToInject = [
  
 	//angular modules
 	 'js/dependencies/public/homepage/authModule.js',
+	 'js/dependencies/private/dashboard/dashboardModule.js',
 	//Some other stuff
 	'js/dependencies/**/*.js',
 

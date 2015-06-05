@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Activity Overlord | Welcome back,
+		<%=me.name %>!</title>
+	<!-- Viewport mobile tag for sensible mobile support -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!--STYLES-->
+	<link rel="stylesheet" href="/styles/angular-toastr.min.css">
+	<link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/styles/bootstrap.min.css">
+	<link rel="stylesheet" href="/styles/importer.css">
+	<link rel="stylesheet" href="/styles/pages/login-soft.css">
+	<link rel="stylesheet" href="/styles/print.css">
+	<link rel="stylesheet" href="/styles/style-non-responsive.css">
+	<link rel="stylesheet" href="/styles/style-responsive.css">
+	<link rel="stylesheet" href="/styles/style.css">
+	<link rel="stylesheet" href="/styles/themes/blue.css">
+	<link rel="stylesheet" href="/styles/themes/brown.css">
+	<link rel="stylesheet" href="/styles/themes/default.css">
+	<link rel="stylesheet" href="/styles/themes/grey.css">
+	<link rel="stylesheet" href="/styles/themes/light.css">
+	<link rel="stylesheet" href="/styles/themes/purple.css">
+	<!--STYLES END-->
+	<!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
+	<script type="text/javascript">
+		window.SAILS_LOCALS = {
+			_csrf: '<%= _csrf %>',
+			me: <%- JSON.stringify(me) %>
+		};
+	</script>
+</head>
+
+<body ng-app="DashboardApp" ng-controller="DashboardController" ng-cloak>
+	<!-- Fixed navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" data-="#">Bootstrap theme</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{me.username}} <span class="caret"></span></a>
+						<ul class="dropdown-menu" role="menu">
+							<li><a href="#">Action</a>
+							</li>
+							<li class="divider"></li>
+							<li><a href="/logout">cerrar sesión</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>
+	<div class="container">
+		hola
+	</div>
+	 <!--SCRIPTS-->
+ 	<script src="/js/dependencies/sails.io.js"></script>
+ 	<script src="/js/dependencies/angular.min.js"></script>
+ 	<script src="/js/dependencies/jquery-1.10.1.min.js"></script>
+ 	<script src="/js/dependencies/bootstrap.min.js"></script>
+ 	<script src="/js/dependencies/public/homepage/authModule.js"></script>
+ 	<script src="/js/dependencies/private/dashboard/dashboardModule.js"></script>
+ 	<script src="/js/dependencies/angular-toastr.min.js"></script>
+ 	<script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
+ 	<script src="/js/dependencies/jquery-migrate-1.2.1.min.js"></script>
+ 	<script src="/js/dependencies/jquery.backstretch.min.js"></script>
+ 	<script src="/js/dependencies/private/dashboard/dashboardController.js"></script>
+ 	<script src="/js/dependencies/public/homepage/AuthController.js"></script>
+ 	<script src="/js/dependencies/scripts/app.js"></script>
+ 	<script src="/js/dependencies/scripts/login-soft.js"></script>
+ 	<script src="/js/dependencies/select2.full.min.js"></script>
+ 	<!--SCRIPTS END-->
+</body>
+
+</html>
