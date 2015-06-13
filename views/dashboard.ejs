@@ -8,7 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!--STYLES-->
 	<link rel="stylesheet" href="/styles/angular-toastr.min.css">
-	<link rel="stylesheet" href="/styles/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/styles/bootstrap.min.css">
 	<link rel="stylesheet" href="/styles/importer.css">
 	<link rel="stylesheet" href="/styles/pages/login-soft.css">
@@ -16,12 +15,6 @@
 	<link rel="stylesheet" href="/styles/style-non-responsive.css">
 	<link rel="stylesheet" href="/styles/style-responsive.css">
 	<link rel="stylesheet" href="/styles/style.css">
-	<link rel="stylesheet" href="/styles/themes/blue.css">
-	<link rel="stylesheet" href="/styles/themes/brown.css">
-	<link rel="stylesheet" href="/styles/themes/default.css">
-	<link rel="stylesheet" href="/styles/themes/grey.css">
-	<link rel="stylesheet" href="/styles/themes/light.css">
-	<link rel="stylesheet" href="/styles/themes/purple.css">
 	<!--STYLES END-->
 	<!--Added this so the client has access to the csrf tag and it's grabbed first service side on every page -->
 	<script type="text/javascript">
@@ -32,9 +25,9 @@
 	</script>
 </head>
 
-<body ng-app="DashboardApp" ng-controller="DashboardController" ng-cloak>
+<body ng-app="dashApp" ng-controller="DashCtrl as ctrl" ng-cloak style="padding-top:70px !important">
 	<!-- Fixed navbar -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -62,20 +55,52 @@
 			<!--/.nav-collapse -->
 		</div>
 	</nav>
-	<div class="container">
-		hola
-	</div>
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+					Contenido central
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4" >
+                <!-- Blog Categories Well -->
+                <div class="well" ng-viewport="usuarios">
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
 	 <!--SCRIPTS-->
  	<script src="/js/dependencies/sails.io.js"></script>
  	<script src="/js/dependencies/angular.min.js"></script>
+ 	<script src="/js/dependencies/router.es5.min.js"></script>
  	<script src="/js/dependencies/jquery-1.10.1.min.js"></script>
  	<script src="/js/dependencies/bootstrap.min.js"></script>
  	<script src="/js/dependencies/public/homepage/authModule.js"></script>
- 	<script src="/js/dependencies/private/dashboard/dashboardModule.js"></script>
  	<script src="/js/dependencies/angular-toastr.min.js"></script>
  	<script src="/js/dependencies/angular-toastr.tpls.min.js"></script>
  	<script src="/js/dependencies/jquery-migrate-1.2.1.min.js"></script>
  	<script src="/js/dependencies/jquery.backstretch.min.js"></script>
+ 	<script src="/js/dependencies/lodash.min.js"></script>
+ 	<script src="/js/dependencies/private/components/usuarios/usuarios.js"></script>
  	<script src="/js/dependencies/private/dashboard/dashboardController.js"></script>
  	<script src="/js/dependencies/public/homepage/AuthController.js"></script>
  	<script src="/js/dependencies/scripts/app.js"></script>

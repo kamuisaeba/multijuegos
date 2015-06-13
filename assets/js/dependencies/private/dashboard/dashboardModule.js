@@ -1,1 +1,0 @@
-var dashboardApp = angular.module("DashboardApp",['toastr']);

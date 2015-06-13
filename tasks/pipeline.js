@@ -29,20 +29,23 @@ var jsFilesToInject = [
 
   // Dependencies like jQuery, or Angular are brought in here
 	 'js/dependencies/angular.min.js',
+	"/js/dependencies/router.es5.min.js",
 	'js/dependencies/jquery-1.10.1.min.js',
 	'js/dependencies//bootstrap.min.js',
 	'js/dependencier/scripts/app.js',
  
 	//angular modules
 	 'js/dependencies/public/homepage/authModule.js',
-	 'js/dependencies/private/dashboard/dashboardModule.js',
 	//Some other stuff
 	'js/dependencies/**/*.js',
+	//components modules
+  	'/js/dependencies/private/components/**/*.js',
+
 
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
-  //Angular modules
 
+	
   'js/**/*.js'
 ];
 
@@ -57,7 +60,8 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  'templates/**/*.html'
+  'templates/**/*.html',
+  'components/**/*.html'
 ];
 
 
