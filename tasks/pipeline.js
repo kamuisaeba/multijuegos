@@ -39,7 +39,7 @@ var jsFilesToInject = [
 	//Some other stuff
 	'js/dependencies/**/*.js',
 	//components modules
-  	'/js/dependencies/private/components/**/*.js',
+  	'/components/**/*.js',
 
 
   // All of the rest of your client-side js files

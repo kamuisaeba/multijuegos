@@ -159,7 +159,7 @@ module.exports = {
 					msUntilInactive: (function() {
 						var _msUntilLastActive;
 						var now = new Date();
-						_msUntilLastActive = (user.lastActive.getTime() + 15 * 1000) - now.getTime();
+						_msUntilLastActive = (user.lastLoggedIn.getTime() + 15 * 1000) - now.getTime();
 						if (_msUntilLastActive < 0) {
 							_msUntilLastActive = 0;
 						}
